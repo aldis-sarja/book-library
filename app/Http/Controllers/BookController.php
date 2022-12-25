@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
+use App\Services\GetAllBooksService;
+use Carbon\Carbon;
+use Illuminate\Database\QueryException;
 
 class BookController extends Controller
 {
@@ -13,9 +16,14 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(GetAllBooksService $getAllBooksService)
     {
-        //
+        try {
+            $books = $getAllBooksService->execute();
+            dd($books->get(11));
+        } catch (QueryException $e) {
+            return $e->getMessage();
+        }
     }
 
     /**

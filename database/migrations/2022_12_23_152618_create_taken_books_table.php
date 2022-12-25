@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('taken_books', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('book_id');
-            $table->dateTime('taken');
+            $table->dateTime('date');
             $table->timestamps();
         });
     }

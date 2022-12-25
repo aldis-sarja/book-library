@@ -29,11 +29,11 @@ class TakenBookSeeder extends Seeder
                 }
                 TakenBook::factory()->create([
                     'book_id' => $book->id,
-                    'taken' => $date
+                    'date' => $date
                 ]);
             }
             if ($isStillTaken == 1) {
-                $book->taken = $lastTimeTaken;
+                $book->have_taken = $lastTimeTaken;
                 $book->save();
             }
         }

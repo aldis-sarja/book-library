@@ -12,7 +12,7 @@ class TakenBook extends Model
 
     protected $fillable = [
         'book_id',
-        'taken'
+        'date'
     ];
 
     public function book(): BelongsTo

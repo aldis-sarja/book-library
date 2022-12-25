@@ -18,11 +18,6 @@ class BookSeeder extends Seeder
         Book::factory()->create([
             'title' => 'Lopkautuve Nr.5',
             'author' => 'Kurts Vonnegūts',
-//            'taken' => new Carbon("2021-11-01 12:00")
-        ]);
-        Book::factory()->create([
-            'title' => 'Galapagu salas',
-            'author' => 'Kurts Vonnegūts',
         ]);
         Book::factory()->create([
             'title' => 'Galapagu salas',
@@ -41,9 +36,16 @@ class BookSeeder extends Seeder
             'author' => 'Kurts Vonnegūts',
         ]);
         Book::factory()->create([
+            'title' => 'Armagedons atskatoties',
+            'author' => 'Kurts Vonnegūts',
+        ]);
+        Book::factory()->create([
+            'title' => 'Ietupinātais',
+            'author' => 'Kurts Vonnegūts',
+        ]);
+        Book::factory()->create([
             'title' => 'Fuko svārsts',
             'author' => 'Umberto Eko',
-//            'taken' => new Carbon("2022-12-23 12:00")
         ]);
         Book::factory()->create([
             'title' => 'Prāgas kapsēta',
@@ -88,6 +90,26 @@ class BookSeeder extends Seeder
         Book::factory()->create([
             'title' => 'Viltus Nerons',
             'author' => 'Lions Feihtvangers',
+        ]);
+        Book::factory()->create([
+            'title' => 'Meistars un Margarita',
+            'author' => 'Mihails Bulgakovs',
+        ]);
+        Book::factory()->create([
+            'title' => 'Suņa sirds',
+            'author' => 'Mihails Bulgakovs',
+        ]);
+        Book::factory()->create([
+            'title' => 'Ardievas ieročiem',
+            'author' => 'Ernests Hemingvejs',
+        ]);
+        Book::factory()->create([
+            'title' => 'Kam ir un kam nav',
+            'author' => 'Ernests Hemingvejs',
+        ]);
+        Book::factory()->create([
+            'title' => 'Kam skanēs zvans',
+            'author' => 'Ernests Hemingvejs',
         ]);
     }
 }
