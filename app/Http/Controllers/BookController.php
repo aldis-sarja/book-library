@@ -20,7 +20,7 @@ class BookController extends Controller
     {
         try {
             $books = $getAllBooksService->execute();
-            dd($books->get(11));
+            dd($books);
         } catch (QueryException $e) {
             return $e->getMessage();
         }
