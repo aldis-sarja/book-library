@@ -21,7 +21,7 @@ class BookController extends Controller
     {
         try {
             $books = $getAllBooksService->execute();
-            dd($books);
+            return view('welcome', ['books' => $books]);
         } catch (QueryException $e) {
             return $e->getMessage();
         }
