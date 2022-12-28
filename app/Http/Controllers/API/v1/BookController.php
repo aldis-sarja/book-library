@@ -20,6 +20,7 @@ class BookController extends Controller
             );
 
         } catch (QueryException $e) {
+            report($e);
             return response()->json(['error' => $e->getMessage()], 404);
         }
     }
