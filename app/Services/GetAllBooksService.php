@@ -9,7 +9,7 @@ class GetAllBooksService extends BookService
     public function execute(): Collection
     {
         return cache()->remember("AllBooks", self::CACHE_TIME, function () {
-            return $this->getAllSorted();
+            return $this->getAllSorted()->values();
         });
     }
 }

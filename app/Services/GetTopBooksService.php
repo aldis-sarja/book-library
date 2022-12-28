@@ -16,7 +16,7 @@ class GetTopBooksService extends BookService
                     ->slice(0, $count)
                     ->filter(function($book) {
                         return $book->getTakenInCurrentMonth() > 0;
-                    });
+                    })->values();
         });
     }
 }
