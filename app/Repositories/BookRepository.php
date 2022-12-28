@@ -11,4 +11,12 @@ class BookRepository implements BookRepositoryInterface
     {
         return Book::with('taken')->get();
     }
+
+    public function searchBooks(string $search): Collection
+    {
+        return Book::where('title', 'LIKE', "%{$search}%")
+            ->orWhere('author', 'LIKE', "%{$search}%")
+            ->with('taken')
+            ->get();
+    }
 }

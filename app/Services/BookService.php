@@ -42,10 +42,13 @@ abstract class BookService
 
     protected function getAllSorted(): Collection
     {
-        $books = $this->bookRepository->getAllBooks()->map(function ($book) {
+        return $this->sort($this->bookRepository->getAllBooks()->map(function ($book) {
             return $this->remapBookData($book);
-        });
+        }));
+    }
 
+    protected function sort(Collection $books): Collection
+    {
         return $books->sort(function ($book1, $book2) {
             if ($book1->getTakenInCurrentMonth() === $book2->getTakenInCurrentMonth()) {
                 if ($book1->getTotalTaken() === $book2->getTotalTaken()) {

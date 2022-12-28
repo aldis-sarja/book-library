@@ -21,7 +21,7 @@ class TakenBookSeeder extends Seeder
         foreach ($books as $book) {
             $timesTaken = random_int(0, 11);
             $lastTimeTaken = Carbon::now()->subWeeks(15);
-            $isStillTaken = random_int(-3, 1);
+            $isStillTaken = random_int(1, 5);
             for ($c = 0; $c < $timesTaken; $c++) {
                 $date = Carbon::now()->subWeeks(random_int(0, 15));
                 if ($date > $lastTimeTaken) {
