@@ -20,6 +20,9 @@ class TakenBookSeeder extends Seeder
         $books = Book::all();
         foreach ($books as $book) {
             $timesTaken = random_int(0, 11);
+            if ($timesTaken === 0) {
+                continue;
+            }
             $lastTimeTaken = Carbon::now()->subWeeks(15);
             $isStillTaken = random_int(1, 5);
             for ($c = 0; $c < $timesTaken; $c++) {
