@@ -49,7 +49,8 @@ Point your browser to address `http://localhost:8000/`
 
 ## API
 There is only one API endpoint:
-- `api/v1/books/top-ten`
+- `api/v1/books/top` By default, returns top 10 popular books in the last month.
+- `api/v1/books/top?amount=5` Top 5 books.
 
 ```
 [

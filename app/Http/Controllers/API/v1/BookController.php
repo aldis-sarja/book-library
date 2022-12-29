@@ -7,14 +7,19 @@ use App\Http\Resources\BookResource;
 use App\Services\GetTopBooksService;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    public function topTen(GetTopBooksService $getTopBooksService): JsonResponse
+    public function top(GetTopBooksService $getTopBooksService, Request $request): JsonResponse
     {
+        $amount = (int)$request->get('amount');
+        if (!$amount) {
+            $amount = 10;
+        }
         try {
             return response()->json(
-                $getTopBooksService->execute(10)->map(function ($book) {
+                $getTopBooksService->execute($amount)->map(function ($book) {
                     return new BookResource($book);
                 })
             );
