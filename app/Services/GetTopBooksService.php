@@ -6,7 +6,7 @@ use Illuminate\Support\Collection;
 
 class GetTopBooksService extends BookService
 {
-    public function execute(int $count = 10): Collection
+    public function execute(int $count): Collection
     {
         return cache()->remember(
             "TopBooks:" . $count,

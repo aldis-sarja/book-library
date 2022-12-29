@@ -10,7 +10,7 @@ use Illuminate\Support\Collection;
 abstract class BookService
 {
     protected BookRepositoryInterface $bookRepository;
-    protected const CACHE_TIME = 10;
+    protected const CACHE_TIME = 180;
 
     public function __construct(BookRepositoryInterface $bookRepository)
     {
