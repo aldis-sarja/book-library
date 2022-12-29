@@ -21,7 +21,7 @@ class BookController extends Controller
 
         } catch (QueryException $e) {
             report($e);
-            return response()->json(['error' => $e->getMessage()], 404);
+            return response()->json(['error' => "Something went wrong!"], 404);
         }
     }
 }
